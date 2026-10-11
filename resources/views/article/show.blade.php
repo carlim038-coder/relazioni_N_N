@@ -29,7 +29,7 @@
                     </form>
                 </div>
 
-                <!-- Tag / Categorie associate -->
+                
                 @if($article->tags->count() > 0)
                     <div class="mb-4">
                         @foreach($article->tags as $tag)

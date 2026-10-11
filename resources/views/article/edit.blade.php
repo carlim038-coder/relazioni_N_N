@@ -53,24 +53,6 @@
                         <textarea class="form-control" id="body" name="body" rows="6" required>{{ old('body', $article->body) }}</textarea>
                     </div>
 
-                    {{-- Sezione Categorie (molti-a-molti) --}}
-                    <div class="mb-3">
-                        <label class="form-label">Modifica Categorie</label>
-                        <div class="d-flex flex-wrap gap-3">
-                            @foreach($categories as $category)
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="categories[]" value="{{ $category->id }}" id="category-edit-{{ $category->id }}"
-                                        {{-- Mantiene lo stato selezionato sia in caso di errore di validazione (old) sia se la categoria è associata all'articolo --}}
-                                        @if((is_array(old('categories')) && in_array($category->id, old('categories'))) || (!old('categories') && $article->categories->contains($category))) checked @endif>
-                                    
-                                    <label class="form-check-label" for="category-edit-{{ $category->id }}">
-                                        {{ $category->name }}
-                                    </label>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-
                     {{-- Sezione Tag (molti-a-molti) --}}
                     <div class="mb-3">
                         <label class="form-label">Modifica Tag</label>

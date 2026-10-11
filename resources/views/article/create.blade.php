@@ -32,7 +32,7 @@
                         <textarea class="form-control" id="body" name="body" rows="6" required>{{ old('body') }}</textarea>
                     </div>
 
-                    <!-- SEZIONE TAG (che fanno anche da categorie) -->
+                    
                     <div class="mb-3">
                         <label class="form-label">Scegli i Tag</label>
                         <div class="d-flex flex-wrap gap-3">

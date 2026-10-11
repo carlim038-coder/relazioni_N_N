@@ -75,10 +75,10 @@ class ArticleController extends Controller
      * Mostra il form per modificare un articolo esistente.
      */
     public function edit(Article $article)
-    {
-        $tags = Tag::all();
-        return view('article.edit', compact('article', 'tags'));
-    }
+{
+    $tags = Tag::all(); // Prende tutti i tag disponibili
+    return view('article.edit', compact('article', 'tags'));
+}
 
     /**
      * Aggiorna l'articolo nel database.
@@ -116,16 +116,14 @@ class ArticleController extends Controller
         return redirect()->route('articles.index')->with('success', 'Articolo modificato con successo!');
     }
 
-    /**
-     * Mostra gli articoli filtrati per tag (che fanno da categoria).
+/**
+     * Mostra gli articoli filtrati per tag.
      */
     public function category(Tag $tag)
     {
-        $articles = $tag->articles;
-        $category = $tag; // Adatta il tag alla variabile $category richiesta dalla vista
-        return view('article.category', compact('category', 'articles'));
+        $articles = $tag->articles; // Prende solo gli articoli associati a questo tag
+        return view('article.index', compact('articles', 'tag'));
     }
-
     /**
      * Elimina l'articolo dal database.
      */

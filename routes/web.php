@@ -14,8 +14,8 @@ Route::get('/articles/{article}/edit', [ArticleController::class, 'edit'])->name
 Route::put('/articles/{article}', [ArticleController::class, 'update'])->name('articles.update');
 Route::delete('/articles/{article}', [ArticleController::class, 'destroy'])->name('articles.destroy');
 
-// Rotta per filtrare gli articoli per tag (che fanno da categoria)
-Route::get('/category/{tag}', [ArticleController::class, 'category'])->name('articles.category');
+// Rotta per filtrare gli articoli per tag
+Route::get('/tags/{tag}', [ArticleController::class, 'category'])->name('articles.tag');
 
 // Rotte di autenticazione
 require __DIR__.'/auth.php';

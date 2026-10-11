@@ -33,12 +33,4 @@ class Article extends Model
     {
         return $this->belongsToMany(Tag::class);
     }
-
-    /**
-     * Relazione molti-a-molti: un articolo può appartenere a più categorie.
-     */
-    public function categories()
-    {
-        return $this->belongsToMany(Category::class);
-    }
 }

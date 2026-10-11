@@ -13,19 +13,19 @@
             </div>
         </div>
 
-        <!-- Bottoni per filtrare le categorie -->
-        <div class="row mb-5">
-            <div class="col-12 text-center">
-                <div class="d-flex flex-wrap justify-content-center gap-2">
-                    <span class="fw-bold align-self-center me-2 text-muted">Esplora per categoria:</span>
-                    @foreach(\App\Models\Category::all() as $cat)
-                        <a href="{{ route('articles.category', $cat) }}" class="btn btn-outline-primary btn-sm rounded-pill px-3 shadow-sm">
-                            <i class="bi bi-tag-fill me-1"></i> {{ $cat->name }}
-                        </a>
-                    @endforeach
-                </div>
-            </div>
+        <!-- Bottoni per filtrare i tag -->
+<div class="row mb-5">
+    <div class="col-12 text-center">
+        <div class="d-flex flex-wrap justify-content-center gap-2">
+            <span class="fw-bold align-self-center me-2 text-muted">Esplora per tag:</span>
+            @foreach(\App\Models\Tag::all() as $tag)
+                <a href="{{ route('articles.tag', $tag) }}" class="btn btn-outline-primary btn-sm rounded-pill px-3 shadow-sm">
+                    <i class="bi bi-tag-fill me-1"></i> {{ $tag->name }}
+                </a>
+            @endforeach
         </div>
+    </div>
+</div>
 
         <!-- Messaggio di successo -->
         @if (session('success'))
